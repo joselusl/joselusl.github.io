@@ -1,0 +1,35 @@
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
+
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% endif %}
+
+{% if author.googlescholar %}
+  A complete list of my publications is available in <a href="https://scholar.google.com/citations?user={{author.googlescholar}}">Google Scholar</a>.
+{% endif %}
+
+{% include base_path %}
+
+
+<p><b>Journal publications:</b></p>
+
+{% for post in site.publications reversed %}
+  {% if post.type == "journal" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
+
+
+<p><b>Conference publications:</b></p>
+
+{% for post in site.publications reversed %}
+  {% if post.type == "conference" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
+

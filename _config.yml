@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Jose-Luis SANCHEZ-LOPEZ"
+  name             : "Dr. Jose-Luis SANCHEZ-LOPEZ"
   avatar           : "20190807_132238_cropped.jpg"
   bio              : "Research Scientist"
   location         : "Luxembourg"
@@ -88,11 +88,11 @@ author:
   employer_webpage : "https://wwwen.uni.lu/snt"
   email            : "joseluis.sanchezlopez@uni.lu"
   linkedin         : "joseluis-sanchezlopez"
-  orcid            : "https://orcid.org/0000-0001-5018-0925"
-  googlescholar    : "https://scholar.google.com/citations?user=QuzQdDwAAAAJ"
+  orcid            : "0000-0001-5018-0925"
+  googlescholar    : "QuzQdDwAAAAJ"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   pubmed           :
-  uri              :
+  uri              : "https://wwwen.uni.lu/snt/people/jose_luis_sanchez_lopez"
   github           : "joselusl"
   bitbucket        :
   codepen          :
@@ -251,6 +251,25 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _research
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
+
 
 # Sass/SCSS
 sass:
