@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "Jose-Luis SANCHEZ-LOPEZ"
 title_separator          : "-"
 name                     : &name "Jose-Luis SANCHEZ-LOPEZ"
 description              : &description "personal description"
@@ -85,6 +85,7 @@ author:
   bio              : "Research Scientist"
   location         : "Luxembourg"
   employer         : "SnT - University of Luxembourg"
+  employer_webpage : "https://wwwen.uni.lu/snt"
   email            : "joseluis.sanchezlopez@uni.lu"
   linkedin         : "joseluis-sanchezlopez"
   orcid            : "https://orcid.org/0000-0001-5018-0925"
@@ -175,18 +176,24 @@ kramdown:
 
 # Collections
 collections:
-  teaching:
+  research:
     output: true
     permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  projects:
     output: true
     permalink: /:collection/:path/
-  talks:
+  teaching:
     output: true
     permalink: /:collection/:path/
+  #portfolio:
+  #  output: true
+  #  permalink: /:collection/:path/
+  #talks:
+  #  output: true
+  #  permalink: /:collection/:path/
 
 
 # Defaults
