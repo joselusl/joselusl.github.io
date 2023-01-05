@@ -1,0 +1,84 @@
+
+
+
+{% if related.research %}
+  {% if flag_extended %}
+    <b>Related Research:</b>
+      <ul style="margin-top:0px;">
+      {% for research in related.research %}
+        <li>
+        <a href="{{ site.url }}/{{ research.url }}" rel="permalink"><b>{{research.title}}</b></a>
+        </li>
+      {% endfor %}
+      </ul>
+  {% else %}
+    Related Research:
+    {% for research in related.research %}
+      <a href="{{ site.url }}/{{ research.url }}" rel="permalink"><b>{{research.title}}</b></a>
+      {% if forloop.rindex > 1 %}
+        ,
+      {% endif %}
+    {% endfor %}
+    <br>
+  {% endif %}
+{% endif %}
+
+
+{% if related.projects %}
+  {% if flag_extended %}
+    <b>Related Projects:</b>
+      <ul style="margin-top:0px;">
+      {% for project in related.projects %}
+        <li>
+        <a href="{{ site.url }}/{{ project.url }}" rel="permalink"><b>{{project.title}}</b></a>
+        </li>
+      {% endfor %}
+      </ul>
+  {% else %}
+    Related Projects:
+    {% for project in related.projects %}
+      <a href="{{ site.url }}/{{ project.url }}" rel="permalink"><b>{{project.title}}</b></a>
+      {% if forloop.rindex > 1 %}
+        ,
+      {% endif %}
+    {% endfor %}
+    <br>
+  {% endif %}
+{% endif %}
+
+
+{% if related.thesis %}
+  {% if flag_extended %}
+    <b>Related Thesis:</b>
+    <br>
+    TODO
+    <br>
+  {% else %}
+    Related Thesis:
+    TODO
+    <br>
+  {% endif %}
+{% endif %}
+
+
+{% if related.publications %}
+  {% if flag_extended %}
+    <b>Related Publications:</b>
+      <ul style="margin-top:0px;">
+      {% for publication in related.publications %}
+        <li>
+        <a href="{{ site.url }}/{{ publication.url }}" rel="permalink"><b>{{publication.title}}</b></a>
+        </li>
+      {% endfor %}
+      </ul>
+  {% else %}
+    Related Publications:
+    {% for publication in related.publications %}
+      <a href="{{ site.url }}/{{ publications.url }}" rel="permalink"><b>{{publication.title}}</b></a>
+      {% if forloop.rindex > 1 %}
+        ,
+      {% endif %}
+    {% endfor %}
+    <br>
+  {% endif %}
+{% endif %}

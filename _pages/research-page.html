@@ -1,0 +1,38 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+author_profile: true
+---
+
+{% include base_path %}
+
+
+My main research goal is to provide robots, with a special focus on aerial robots, with the maximum level of autonomy allowing them to perform different missions without human intervention.
+
+My research interests can be summarized in three main topics:
+(1) situational awareness for intelligent robots, including sensor fusion and state estimation, localization and mapping, computer vision, and machine learning; 
+(2) trajectory and path planning and control of autonomous robots;
+and (3) intelligent and cognitive system architectures for multi-agent robotic systems.
+
+
+My research is organized in the following Research Lines (RL) and Application Areas (AA)
+
+
+<p><b>Research Lines (RL)</b></p>
+
+{% for post in site.research %}
+  {% if post.research.type == "research_line" %}
+    {% include research-item-teaser.html %}
+  {% endif %}
+{% endfor %}
+
+
+<p><b>Application Areas (AA)</b></p>
+
+{% for post in site.research %}
+  {% if post.research.type == "application_area" %}
+    {% include research-item-teaser.html %}
+  {% endif %}
+{% endfor %}
+

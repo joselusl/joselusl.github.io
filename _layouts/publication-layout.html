@@ -54,25 +54,16 @@ layout: default
 
       <section class="page__content" itemprop="text">
 
-        <b>Project information:</b>
-        <br>
+        {% assign publication = page.publication %}
+        {% assign related = page.related %}
 
-        <ul>
-          <li><b>Project title:</b> {{page.project.project_title}}</li>
-          <li><b>Project acronym:</b> {{page.project.project_acronym}}</li>
-          <li><b>Funding source:</b> <a href={{ page.funding_agency_webpage }}>{{ page.project.funding_agency_name }}</a></li>
-          <li><b>Funding scheme:</b>  {{page.project.funding_scheme_name}}</li>
-          <li><b>Project id:</b>  {{page.project.project_id}}</li>
-          <li><b>Project starting date:</b>  {{page.project.project_starting_date}}</li>
-          <li><b>Project duration:</b>  {{page.project.project_duration}}</li>
-          <li><b>Funded amount:</b>  {{page.project.project_funded_amount}}</li>
-        </ul>
+        {% assign flag_extended = true %}
 
-        <b>Abstract:</b> 
-        <p>{{page.project.project_abstract}}</p>
-        <br>
+        {% include publication-item.html %}
 
         {{ content }}
+
+        {% include related-items.html %}
 
 
         {% if page.link %}
@@ -100,7 +91,10 @@ layout: default
     {% endif %}
   </article>
 
-  {% comment %}<!-- only show related on a post page when not disabled -->{% endcomment %}
+  {% comment %}
+    <!-- only show related on a post page when not disabled -->
+  {% endcomment %}
+
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
       {% if site.data.ui-text[site.locale].related_label %}

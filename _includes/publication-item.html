@@ -3,123 +3,85 @@
 {% if publication.type == "journal" %}
   {% include publication-item-journal.html %}
 {% elsif publication.type == "conference" %}
-  TODO
+  {% include publication-item-conference.html %}
 {% endif %}
 
 <br>
 
 {% if flag_extended %}
   <br>
+  <b>Resources: </b>
+  <ul style="margin-top:0px;">
+{% else %}
+  Resources:
 {% endif %}
 
 {% if publication.doi %}
   {% if flag_extended %}
-    <b>Paper link:</b> <a href="https://doi.org/{{publication.doi}}">https://doi.org/{{publication.doi}}</a>.
-    <br>
+    <li>
+    <b>Paper link:</b> <a href="https://doi.org/{{publication.doi}}">https://doi.org/{{publication.doi}}</a>
+    </li>
   {% else %}
     <a href="https://doi.org/{{publication.doi}}">Paper link</a>.
   {% endif %}
 {% endif %}
 {% if publication.supplementary.preprints %}
   {% if flag_extended %}
-    <b>Preprints:</b> <a href="{{publication.supplementary.preprints}}">{{publication.supplementary.preprints}}</a>.
-    <br>
+    <li>
+    <b>Preprints:</b> <a href="{{publication.supplementary.preprints}}">{{publication.supplementary.preprints}}</a>
+    </li>
   {% else %}
     <a href="{{publication.supplementary.preprints}}">Preprints</a>.
   {% endif %}
 {% endif %}
 {% if publication.supplementary.video %}
   {% if flag_extended %}
-    <a href="{{publication.supplementary.video}}">Video</a>.
-    <br>
+    <li>
+    <a href="{{publication.supplementary.video}}">Video</a>
+    </li>
   {% else %}
     <a href="{{publication.supplementary.video}}">Video</a>.
   {% endif %}
 {% endif %}
 {% if publication.supplementary.webpage %}
   {% if flag_extended %}
-    <a href="{{publication.supplementary.webpage}}">Webpage</a>.
-    <br>
+    <li>
+    <a href="{{publication.supplementary.webpage}}">Webpage</a>
+    </li>
   {% else %}
     <a href="{{publication.supplementary.webpage}}">Webpage</a>.
   {% endif %}
 {% endif %}
 {% if publication.supplementary.code %}
   {% if flag_extended %}
-    <a href="{{publication.supplementary.code}}">Code</a>.
-    <br>
+    <li>
+    <a href="{{publication.supplementary.code}}">Code</a>
+    </li>
   {% else %}
     <a href="{{publication.supplementary.code}}">Code</a>.
   {% endif %}
 {% endif %}
 {% if publication.supplementary.data %}
   {% if flag_extended %}
-    <a href="{{publication.supplementary.data}}">Data</a>.
-    <br>
+    <li>
+    <a href="{{publication.supplementary.data}}">Data</a>
+    </li>
   {% else %}
     <a href="{{publication.supplementary.data}}">Data</a>.
   {% endif %}
 {% endif %}
 {% if publication.supplementary.bibtex %}
   {% if flag_extended %}
-    <b>Bibtex citation:</b> <a href="{{site.url}}/{{publication.supplementary.bibtex}}">Bibtex</a>.
-    <br>
+    <li>
+    <b>Bibtex citation:</b> <a href="{{site.url}}/{{publication.supplementary.bibtex}}">Bibtex</a>
+    </li>
   {% else %}
     <a href="{{site.url}}/{{publication.supplementary.bibtex}}">Bibtex</a>.
   {% endif %}
 {% endif %}
 
+{% if flag_extended %}
+  </ul style="margin-top:0px;">
+{% endif %}
+
 <br>
-
-{% if related.research %}
-  {% if flag_extended %}
-    <b>Related research:</b>
-    <br>
-    TODO
-    {{related.research}}
-    <br><br>
-  {% else %}
-    Related research:
-    TODO
-    {{related.research}}
-    <br>
-  {% endif %}
-{% endif %}
-
-
-{% if related.projects %}
-  {% if flag_extended %}
-    <b>Related projects:</b>
-      <ul style="margin-top:0px;">
-      {% for project in related.projects %}
-        <li>
-        <a href="{{ site.url }}/{{ project.url }}" rel="permalink"><b>{{project.title}}</b></a>
-        </li>
-      {% endfor %}
-      </ul>
-    <br>
-  {% else %}
-    Related projects:
-    {% for project in related.projects %}
-      <a href="{{ site.url }}/{{ project.url }}" rel="permalink"><b>{{project.title}}</b></a>
-      {% if forloop.rindex > 1 %}
-        ,
-      {% endif %}
-    {% endfor %}
-    <br>
-  {% endif %}
-{% endif %}
-
-
-{% if related.thesis %}
-  {% if flag_extended %}
-    <b>Related thesis:</b>
-    <br>
-    TODO
-    <br><br>
-  {% else %}
-    Related thesis:
-    TODO
-    <br>
-  {% endif %}
-{% endif %}
