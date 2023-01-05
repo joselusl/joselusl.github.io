@@ -1,0 +1,79 @@
+---
+
+title: "Journal Publication"
+
+collection: publications
+
+permalink: /publication/journal/2022-10_Bavle_Situational
+
+publication:
+  type: journal
+  status: published
+  title: "Situational Graphs for Robot Navigation in Structured Indoor Environments"
+  authors: "H. Bavle, J. L. Sanchez-Lopez, M. Shaheer, J. Civera, H. Voos"
+  journal: "Robotics and Automation Letters (RA-L)"
+  publisher: "IEEE"
+  e-issn: "2377-3766"
+  volume: 7
+  number: 4
+  pages: "9107-9114"
+  doi: "10.1109/LRA.2022.3189785"
+  date_publication:
+    year: 2022
+    month: Oct.
+    day: #
+  date_online:
+    year: 2022
+    month: Jul.
+    day: 11
+  supplementary:
+    preprints: "https://arxiv.org/abs/2202.12197"
+    video: #
+    webpage: #
+    code: #
+    data: #
+    bibtex: "files/publications/journal/10.1109_LRA.2022.3189785.bib"
+
+related:
+  research: #
+  projects: #
+  thesis: #
+
+---
+
+
+{% assign publication = page.publication %}
+
+{% include publication-item.html %}
+
+<br><br>
+
+<b>Abstract:</b>
+<br>
+
+Mobile robots should be aware of their situation , comprising the deep understanding of their surrounding environment along with the estimation of its own state, to successfully make intelligent decisions and execute tasks autonomously in real environments. 3D scene graphs are an emerging field of research that propose to represent the environment in a joint model comprising geometric, semantic and relational/topological dimensions. Although 3D scene graphs have already been combined with SLAM techniques to provide robots with situational understanding, further research is still required to effectively deploy them on-board mobile robots. To this end, we present in this paper a novel, real-time, online built Situational Graph ( S-Graph ), which combines in a single optimizable graph, the representation of the environment with the aforementioned three dimensions, together with the robot pose. Our method utilizes odometry readings and planar surfaces extracted from 3D LiDAR scans, to construct and optimize in real-time a three layered S-Graph that includes (1) a robot tracking layer where the robot poses are registered, (2) a metric-semantic layer with features such as planar walls and (3) our novel topological layer constraining the planar walls using higher-level features such as corridors and rooms. Our proposal does not only demonstrate state-of-the-art results for pose estimation of the robot, but also contributes with a metric-semantic-topological model of the environment.
+
+<br><br>
+
+
+{% if page.related.research %}
+  <b>Related research:</b>
+  <br>
+  TODO
+  <br><br>
+{% endif %}
+
+
+{% if page.related.projects %}
+  <b>Related projects:</b>
+  <br>
+  TODO
+{% endif %}
+
+
+{% if page.related.thesis %}
+  <b>Related thesis:</b>
+  <br>
+  TODO
+{% endif %}
+

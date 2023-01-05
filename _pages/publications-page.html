@@ -18,18 +18,22 @@ author_profile: true
 
 <p><b>Journal publications:</b></p>
 
+<ul>
+
 {% for post in site.publications reversed %}
-  {% if post.type == "journal" %}
-    {% include archive-single.html %}
+  {% if post.publication.type == "journal" %}
+    <li>{% include publication-item-teaser.html %}</li>
   {% endif %}
 {% endfor %}
+
+</ul>
 
 
 <p><b>Conference publications:</b></p>
 
 {% for post in site.publications reversed %}
-  {% if post.type == "conference" %}
-    {% include archive-single.html %}
+  {% if post.publication.type == "conference" %}
+    {% include publication-item-teaser.html %}
   {% endif %}
 {% endfor %}
 
