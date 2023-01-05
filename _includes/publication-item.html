@@ -1,65 +1,72 @@
 
 
-{{publication.authors}}.
-{% if post.link %}
-  <a href="{{ post.link }}"><b>{{publication.title}}</b></a>.
-{% else %}
-  <a href="{{ base_path }}{{ post.url }}" rel="permalink"><b>{{publication.title}}</b></a>.
+{% if publication.type == "journal" %}
+  {% include publication-item-journal.html %}
+{% elsif publication.type == "conference" %}
+  TODO
 {% endif %}
-{{publication.journal}}.
-{{publication.publisher}}.
-{% if publication.issn %}
-  ISSN: {{publication.issn}}.
-{% endif %}
-{% if publication.e-issn %}
-  e-ISSN: {{publication.e-issn}}.
-{% endif %}
-vol. {{publication.volume}}.
-no. {{publication.number}}.
-pp. {{publication.pages}}.
-{% if publication.date_publication %}
-  {% if publication.date_publication.day and publication.date_publication.month and publication.date_publication.year %}
-    {{publication.date_publication.day}} {{publication.date_publication.month}} {{publication.date_publication.year}}.
-  {% elsif publication.date_publication.month and publication.date_publication.year %}
-    {{publication.date_publication.month}} {{publication.date_publication.year}}.
-  {% elsif publication.date_publication.year %}
-    {{publication.date_publication.year}}.
-  {% endif %}
-{% endif %}
-{% if publication.date_online %}
-  (Online:
-  {% if publication.date_online.day and publication.date_online.month and publication.date_online.year %}
-    {{publication.date_online.day}} {{publication.date_online.month}} {{publication.date_online.year}}).
-  {% elsif publication.date_online.month and publication.date_online.year %}
-    {{publication.date_online.month}} {{publication.date_online.year}}).
-  {% elsif publication.date_online.year %}
-    {{publication.date_online.year}}).
-  {% endif %}
-{% endif %}
-{% if publication.doi %}
-  DOI: <a href="https://doi.org/{{publication.doi}}">{{publication.doi}}</a>.
-{% endif %}
+
 <br>
+
+{% if flag_extended %}
+  <br>
+{% endif %}
+
 {% if publication.doi %}
-  <a href="https://doi.org/{{publication.doi}}">Paper link</a>.
+  {% if flag_extended %}
+    <b>Paper link:</b> <a href="https://doi.org/{{publication.doi}}">https://doi.org/{{publication.doi}}</a>.
+    <br>
+  {% else %}
+    <a href="https://doi.org/{{publication.doi}}">Paper link</a>.
+  {% endif %}
 {% endif %}
 {% if publication.supplementary.preprints %}
-  <a href="{{publication.supplementary.preprints}}">Preprints</a>.
+  {% if flag_extended %}
+    <b>Preprints:</b> <a href="{{publication.supplementary.preprints}}">{{publication.supplementary.preprints}}</a>.
+    <br>
+  {% else %}
+    <a href="{{publication.supplementary.preprints}}">Preprints</a>.
+  {% endif %}
 {% endif %}
 {% if publication.supplementary.video %}
-  <a href="{{publication.supplementary.video}}">Video</a>.
+  {% if flag_extended %}
+    <a href="{{publication.supplementary.video}}">Video</a>.
+    <br>
+  {% else %}
+    <a href="{{publication.supplementary.video}}">Video</a>.
+  {% endif %}
 {% endif %}
 {% if publication.supplementary.webpage %}
-  <a href="{{publication.supplementary.webpage}}">Webpage</a>.
+  {% if flag_extended %}
+    <a href="{{publication.supplementary.webpage}}">Webpage</a>.
+    <br>
+  {% else %}
+    <a href="{{publication.supplementary.webpage}}">Webpage</a>.
+  {% endif %}
 {% endif %}
 {% if publication.supplementary.code %}
-  <a href="{{publication.supplementary.code}}">Code</a>.
+  {% if flag_extended %}
+    <a href="{{publication.supplementary.code}}">Code</a>.
+    <br>
+  {% else %}
+    <a href="{{publication.supplementary.code}}">Code</a>.
+  {% endif %}
 {% endif %}
 {% if publication.supplementary.data %}
-  <a href="{{publication.supplementary.data}}">Data</a>.
+  {% if flag_extended %}
+    <a href="{{publication.supplementary.data}}">Data</a>.
+    <br>
+  {% else %}
+    <a href="{{publication.supplementary.data}}">Data</a>.
+  {% endif %}
 {% endif %}
 {% if publication.supplementary.bibtex %}
-  <a href="{{site.url}}/{{publication.supplementary.bibtex}}">Bibtex</a>.
+  {% if flag_extended %}
+    <b>Bibtex citation:</b> <a href="{{site.url}}/{{publication.supplementary.bibtex}}">Bibtex</a>.
+    <br>
+  {% else %}
+    <a href="{{site.url}}/{{publication.supplementary.bibtex}}">Bibtex</a>.
+  {% endif %}
 {% endif %}
 
 

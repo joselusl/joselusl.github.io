@@ -1,0 +1,40 @@
+
+{{publication.authors}}.
+{% if post.link %}
+  <a href="{{ post.link }}"><b>{{publication.title}}</b></a>.
+{% else %}
+  <a href="{{ base_path }}{{ post.url }}" rel="permalink"><b>{{publication.title}}</b></a>.
+{% endif %}
+{{publication.journal}}.
+{{publication.publisher}}.
+{% if publication.issn %}
+  ISSN: {{publication.issn}}.
+{% endif %}
+{% if publication.e-issn %}
+  e-ISSN: {{publication.e-issn}}.
+{% endif %}
+vol. {{publication.volume}}.
+no. {{publication.number}}.
+pp. {{publication.pages}}.
+{% if publication.date_publication %}
+  {% if publication.date_publication.day and publication.date_publication.month and publication.date_publication.year %}
+    {{publication.date_publication.day}} {{publication.date_publication.month}} {{publication.date_publication.year}}.
+  {% elsif publication.date_publication.month and publication.date_publication.year %}
+    {{publication.date_publication.month}} {{publication.date_publication.year}}.
+  {% elsif publication.date_publication.year %}
+    {{publication.date_publication.year}}.
+  {% endif %}
+{% endif %}
+{% if publication.date_online %}
+  (Online:
+  {% if publication.date_online.day and publication.date_online.month and publication.date_online.year %}
+    {{publication.date_online.day}} {{publication.date_online.month}} {{publication.date_online.year}}).
+  {% elsif publication.date_online.month and publication.date_online.year %}
+    {{publication.date_online.month}} {{publication.date_online.year}}).
+  {% elsif publication.date_online.year %}
+    {{publication.date_online.year}}).
+  {% endif %}
+{% endif %}
+{% if publication.doi %}
+  DOI: <a href="https://doi.org/{{publication.doi}}">{{publication.doi}}</a>.
+{% endif %}
