@@ -18,7 +18,7 @@ author_profile: true
 
 <p><b>Journal publications:</b></p>
 
-<ul>
+<ul style="margin-top:0px;">
 
 {% for post in site.publications reversed %}
   {% if post.publication.type == "journal" %}
@@ -31,9 +31,14 @@ author_profile: true
 
 <p><b>Conference publications:</b></p>
 
+<ul style="margin-top:0px;">
+
 {% for post in site.publications reversed %}
   {% if post.publication.type == "conference" %}
-    {% include publication-item-teaser.html %}
+    <li>{% include publication-item-teaser.html %}</li>
   {% endif %}
 {% endfor %}
+
+</ul>
+
 

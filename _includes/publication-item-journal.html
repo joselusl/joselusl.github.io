@@ -15,7 +15,12 @@
 {% endif %}
 vol. {{publication.volume}}.
 no. {{publication.number}}.
-pp. {{publication.pages}}.
+{% if publication.pages %}
+  pp. {{publication.pages}}.
+{% endif %}
+{% if publication.art_no %}
+  Art. No. {{publication.art_no}}.
+{% endif %}
 {% if publication.date_publication %}
   {% if publication.date_publication.day and publication.date_publication.month and publication.date_publication.year %}
     {{publication.date_publication.day}} {{publication.date_publication.month}} {{publication.date_publication.year}}.

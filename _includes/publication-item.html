@@ -69,4 +69,57 @@
   {% endif %}
 {% endif %}
 
+<br>
 
+{% if related.research %}
+  {% if flag_extended %}
+    <b>Related research:</b>
+    <br>
+    TODO
+    {{related.research}}
+    <br><br>
+  {% else %}
+    Related research:
+    TODO
+    {{related.research}}
+    <br>
+  {% endif %}
+{% endif %}
+
+
+{% if related.projects %}
+  {% if flag_extended %}
+    <b>Related projects:</b>
+      <ul style="margin-top:0px;">
+      {% for project in related.projects %}
+        <li>
+        <a href="{{ site.url }}/{{ project.url }}" rel="permalink"><b>{{project.title}}</b></a>
+        </li>
+      {% endfor %}
+      </ul>
+    <br>
+  {% else %}
+    Related projects:
+    {% for project in related.projects %}
+      <a href="{{ site.url }}/{{ project.url }}" rel="permalink"><b>{{project.title}}</b></a>
+      {% if forloop.rindex > 1 %}
+        ,
+      {% endif %}
+    {% endfor %}
+    <br>
+  {% endif %}
+{% endif %}
+
+
+{% if related.thesis %}
+  {% if flag_extended %}
+    <b>Related thesis:</b>
+    <br>
+    TODO
+    <br><br>
+  {% else %}
+    Related thesis:
+    TODO
+    <br>
+  {% endif %}
+{% endif %}
