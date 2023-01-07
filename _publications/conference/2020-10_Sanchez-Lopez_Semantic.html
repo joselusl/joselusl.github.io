@@ -1,0 +1,72 @@
+---
+
+title: "Conference Publication"
+
+collection: publications
+
+permalink: /publication/conference/2020-10_Sanchez-Lopez_Semantic
+
+
+publication:
+  type: conference
+  status: published
+  title: "Semantic situation awareness of ellipse shapes via deep learning for multirotor aerial robots with a 2D LIDAR"
+  authors: "J. L. Sanchez-Lopez, M. Castillo, H. Voos"
+  conference:
+    name: "2020 International Conference on Unmanned Aircraft Systems (ICUAS)"
+    webpage: #
+    venue:
+      city: Athens
+      state: #
+      country: Greece
+    date: 1-4 Sep. 2020
+  proceedings_book: "2020 International Conference on Unmanned Aircraft Systems (ICUAS)"
+  publisher: "IEEE"
+  issn: #
+  e-issn: 2575-7296
+  pod-issn: 2373-6720
+  pages: 1014-1023
+  art_no: #
+  doi: 10.1109/ICUAS48674.2020.9214063
+  date_publication:
+    year: 2020
+    month: Sep.
+    day: #
+  date_online:
+    year: 2020
+    month: Oct.
+    day: #
+  supplementary:
+    preprints: #
+    video: #
+    webpage: #
+    code: #
+    data: #
+    bibtex: "files/publications/conference/10.1109_ICUAS48674.2020.9214063.bib"
+
+related:
+  research: #
+  projects: #
+  thesis: #
+
+---
+
+
+{% assign publication = page.publication %}
+{% assign related = page.related %}
+
+{% assign flag_extended = true %}
+
+{% include publication-item.html %}
+
+
+<b>Abstract:</b>
+<br>
+
+In this work, we present a semantic situation awareness system for multirotor aerial robots equipped with a 2D LIDAR sensor, focusing on the understanding of the environment, provided to have a drift-free precise localization of the robot (e.g. given by GNSS/INS or motion capture system). Our algorithm generates in real-time a semantic map of the objects of the environment as a list of ellipses represented by their radii, and their pose and velocity, both in world coordinates. Two different Convolutional Neural Network (CNN) architectures are proposed and trained using an artificially generated dataset and a custom loss function, to detect ellipses in a segmented (i.e. with one single object) LIDAR measurement. In cascade, a specifically designed indirect-EKF estimates the ellipses based semantic map in world coordinates, as well as their velocity. We have quantitative and qualitatively evaluated the performance of our proposed situation awareness system. Two sets of Software-In-The-Loop simulations using CoppeliaSim with one and multiple static and moving cylindrical objects are used to evaluate the accuracy and performance of our algorithm. In addition, we have demonstrated the robustness of our proposed algorithm when handling real environments thanks to real laboratory experiments with non-cylindrical static (i.e. a barrel) objects and moving persons.
+
+<br><br>
+
+
+
+

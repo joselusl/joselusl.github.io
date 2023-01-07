@@ -1,0 +1,65 @@
+---
+
+title: "Journal Publication"
+
+collection: publications
+
+permalink: /publication/journal/2023-01_Habibi_Safe
+
+
+publication:
+  type: journal
+  status: published
+  title: "Safe Navigation of a Quadrotor UAV with Uncertain Dynamics and Guaranteed Collision Avoidance Using Barrier Lyapunov Function"
+  authors: "H. Habibi, A. Safaei, H. Voos, M. Darouach, J. L. Sanchez-Lopez"
+  journal: "Aerospace Science and Technology"
+  publisher: "Elsevier"
+  e-issn: #
+  issn: 1270-9638
+  volume: 132
+  number: #
+  pages: 108064
+  art_no: #
+  doi: 10.1016/j.ast.2022.108064
+  date_publication:
+    year: 2023
+    month: Jan.
+    day: #
+  date_online:
+    year: 2022
+    month: Dec.
+    day: #
+  supplementary:
+    preprints: #
+    video: #
+    webpage: #
+    code: #
+    data: #
+    bibtex: "files/publications/journal/10.1016_j.ast.2022.108064.bib"
+
+related:
+  research: #
+  projects: #
+  thesis: #
+
+---
+
+
+{% assign publication = page.publication %}
+{% assign related = page.related %}
+
+{% assign flag_extended = true %}
+
+{% include publication-item.html %}
+
+
+<b>Abstract:</b>
+<br>
+
+In this paper, the safe autonomous motion control of a quadrotor Unmanned Aerial Vehicle (UAV) is considered, in the presence of disturbance, stationary and moving obstacles. In this regard, we directly combine an analytical control design approach, within the backstepping framework, with obstacle avoidance to solve the navigation problem. A Barrier Lyapunov Function (BLF) is incorporated into the translational control to keep the vehicle out of a safety sphere, constructed around the obstacles, while steering it toward a desired position. BLF allows the direct inclusion of the obstacle position in the control design. This is achieved for both cases of known and unknown obstacle velocities. Furthermore, the issue of arbitrary initial conditions is analytically addressed, with a preassigned exit time from the safety sphere. We also consider the case of chance-constrained collision avoidance. The proposed approach leads to a computationally efficient design, since a closed-form of the control is obtained with no need for real-time optimization. More importantly, the analytical stability of closed-loop system is guaranteed. A hierarchical control structure is designed with an adaptive model-free control for unknown attitude dynamics in the presence of disturbances. A number of numerical simulations are performed to evaluate the effectiveness of the proposed approach.
+
+<br><br>
+
+
+
+

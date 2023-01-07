@@ -8,15 +8,21 @@ TODO
   <a href="{{ base_path }}{{ post.url }}" rel="permalink"><b>{{publication.title}}</b></a>.
 {% endif %}
 {{publication.journal}}.
-{{publication.publisher}}.
+{% if publication.publisher %}
+  {{publication.publisher}}.
+{% endif %}
 {% if publication.issn %}
   ISSN: {{publication.issn}}.
 {% endif %}
 {% if publication.e-issn %}
   e-ISSN: {{publication.e-issn}}.
 {% endif %}
-vol. {{publication.volume}}.
-no. {{publication.number}}.
+{% if publication.volume %}
+  vol. {{publication.volume}}.
+{% endif %}
+{% if publication.number %}
+  no. {{publication.number}}.
+{% endif %}
 {% if publication.pages %}
   pp. {{publication.pages}}.
 {% endif %}
@@ -24,22 +30,26 @@ no. {{publication.number}}.
   Art. No. {{publication.art_no}}.
 {% endif %}
 {% if publication.date_publication %}
-  {% if publication.date_publication.day and publication.date_publication.month and publication.date_publication.year %}
-    {{publication.date_publication.day}} {{publication.date_publication.month}} {{publication.date_publication.year}}.
-  {% elsif publication.date_publication.month and publication.date_publication.year %}
-    {{publication.date_publication.month}} {{publication.date_publication.year}}.
-  {% elsif publication.date_publication.year %}
-    {{publication.date_publication.year}}.
+  {% if publication.date_publication.day or publication.date_publication.month or publication.date_publication.year %}
+    {% if publication.date_publication.day and publication.date_publication.month and publication.date_publication.year %}
+      {{publication.date_publication.day}} {{publication.date_publication.month}} {{publication.date_publication.year}}.
+    {% elsif publication.date_publication.month and publication.date_publication.year %}
+      {{publication.date_publication.month}} {{publication.date_publication.year}}.
+    {% elsif publication.date_publication.year %}
+      {{publication.date_publication.year}}.
+    {% endif %}
   {% endif %}
 {% endif %}
 {% if publication.date_online %}
-  (Online:
-  {% if publication.date_online.day and publication.date_online.month and publication.date_online.year %}
-    {{publication.date_online.day}} {{publication.date_online.month}} {{publication.date_online.year}}).
-  {% elsif publication.date_online.month and publication.date_online.year %}
-    {{publication.date_online.month}} {{publication.date_online.year}}).
-  {% elsif publication.date_online.year %}
-    {{publication.date_online.year}}).
+  {% if publication.date_online.day or publication.date_online.month or publication.date_online.year %}
+    (Online:
+    {% if publication.date_online.day and publication.date_online.month and publication.date_online.year %}
+      {{publication.date_online.day}} {{publication.date_online.month}} {{publication.date_online.year}}).
+    {% elsif publication.date_online.month and publication.date_online.year %}
+      {{publication.date_online.month}} {{publication.date_online.year}}).
+    {% elsif publication.date_online.year %}
+      {{publication.date_online.year}}).
+    {% endif %}
   {% endif %}
 {% endif %}
 {% if publication.doi %}
