@@ -5,7 +5,9 @@
 {% else %}
   <a href="{{ base_path }}{{ post.url }}" rel="permalink"><b>{{publication.title}}</b></a>.
 {% endif %}
-{{publication.journal}}.
+{% if publication.journal %}
+  {{publication.journal}}.
+{% endif %}
 {% if publication.publisher %}
   {{publication.publisher}}.
 {% endif %}

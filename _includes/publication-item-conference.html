@@ -7,7 +7,9 @@ TODO
 {% else %}
   <a href="{{ base_path }}{{ post.url }}" rel="permalink"><b>{{publication.title}}</b></a>.
 {% endif %}
-{{publication.journal}}.
+{% if publication.conference.name %}
+  {{publication.conference.name}}.
+{% endif %}
 {% if publication.publisher %}
   {{publication.publisher}}.
 {% endif %}

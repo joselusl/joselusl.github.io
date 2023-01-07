@@ -12,7 +12,7 @@
       {% endfor %}
       </ul>
   {% else %}
-    Related Research:
+    <u>Related Research:</u>
     {% for research in related.research %}
       <a href="{{ site.url }}/{{ research.url }}" rel="permalink"><b>{{research.title}}</b></a>
       {% if forloop.rindex > 1 %}
@@ -35,7 +35,7 @@
       {% endfor %}
       </ul>
   {% else %}
-    Related Projects:
+    <u>Related Projects:</u>
     {% for project in related.projects %}
       <a href="{{ site.url }}/{{ project.url }}" rel="permalink"><b>{{project.title}}</b></a>
       {% if forloop.rindex > 1 %}
@@ -54,7 +54,7 @@
     TODO
     <br>
   {% else %}
-    Related Thesis:
+    <u>Related Thesis:</u>
     TODO
     <br>
   {% endif %}
@@ -72,7 +72,7 @@
       {% endfor %}
       </ul>
   {% else %}
-    Related Publications:
+    <u>Related Publications:</u>
     {% for publication in related.publications %}
       <a href="{{ site.url }}/{{ publications.url }}" rel="permalink"><b>{{publication.title}}</b></a>
       {% if forloop.rindex > 1 %}
